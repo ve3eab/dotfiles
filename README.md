@@ -2,6 +2,10 @@
 ### Download and change folder
 ```
 cd ~
+git clone https://github.com/ve3eab/dotfiles
+
+OR
+
 git clone git@github.com:ve3eab/dotfiles.git
 
 cd dotfiles
