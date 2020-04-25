@@ -32,6 +32,9 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+# make sure ssh-agent is running
+[ -z "$SSH_AUTH_SOCK" ] && eval "$(ssh-agent -s)"
+
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -104,7 +107,7 @@ fi
 
 # some more ls aliases
 alias ll='ls -l'
-alias la='ls -A'
+alias la='ls -Al'
 alias l='ls -CF'
 alias em='emacs -nw'
 alias dd='dd status=progress'
